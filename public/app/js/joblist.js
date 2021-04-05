@@ -90,6 +90,7 @@ const jobList = Vue.component("job-list", {
                                                             <i v-else-if="currentSort === 'name' && currentSortDir === 'desc'" class="material-icons sortable" title="Sort A to Z">arrow_drop_up</i>
                                                             <i v-else class="material-icons sortableinactive" title="Sort A to Z">arrow_drop_down</i>
               </th>
+              <th   scope="col"> Survey ID </th>
               <th   @click="sort('lastRunAt')" scope="col"> Last run started <i v-if="currentSort === 'lastRunAt' && currentSortDir === 'asc'" class="material-icons sortable" title="Sort Z to A">arrow_drop_up</i>
                                                             <i v-else-if="currentSort === 'lastRunAt' && currentSortDir === 'desc'" class="material-icons sortable" title="Sort A to Z">arrow_drop_down</i>
                                                             <i v-else class="material-icons sortableinactive" title="Sort A to Z">arrow_drop_down</i>
@@ -139,6 +140,7 @@ const jobList = Vue.component("job-list", {
                     <i v-if="job.running" class="pill-own bg-warning pill-withoutIcon"><span>Running</span></i>
                   </td>
                   <td class="job-name"  @click="toggleList(job)"> {{job.job.name}} </td>
+                  <td class="job-surveyid"  > {{job.data.data.surveyId}} </td>
                   <td class="job-lastRunAt"  @click="toggleList(job)"> {{ formatDate(job.job.lastRunAt) }} </td>
                   <td class="job-nextRunAt"  @click="toggleList(job)"> {{ formatDate(job.job.nextRunAt) }} </td>
                   <td class="job-finishedAt"  @click="toggleList(job)"> {{ formatDate(job.job.lastFinishedAt) }} </td>
