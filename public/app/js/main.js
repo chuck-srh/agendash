@@ -13,7 +13,7 @@ const app = Vue.component("app", {
     jobData: {},
     deletec: false,
     requeuec: false,
-    pagesize: 15,
+    pagesize: 25,
     sendClean: false,
     createc: false,
     property: "",
